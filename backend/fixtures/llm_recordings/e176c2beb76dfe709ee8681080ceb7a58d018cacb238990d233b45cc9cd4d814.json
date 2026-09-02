@@ -1,0 +1,68 @@
+{
+  "document": "inv_kraus_re_2026_118.txt",
+  "model": "claude-opus-5-5",
+  "turns": [
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "text",
+          "text": "This is a German invoice from Kraus Maschinenbau GmbH. Checking for an existing payee."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_03KrFind",
+          "name": "find_payee",
+          "input": {
+            "name": "Kraus Maschinenbau GmbH"
+          }
+        }
+      ]
+    },
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "tool_use",
+          "id": "toolu_03KrCreate",
+          "name": "create_payee",
+          "input": {
+            "name": "Kraus Maschinenbau GmbH",
+            "email": "buchhaltung@kraus-maschinenbau.test"
+          }
+        }
+      ]
+    },
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "text",
+          "text": "Submitting with amounts copied as printed."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_03KrSubmit",
+          "name": "submit_extraction",
+          "input": {
+            "vendor_name": "Kraus Maschinenbau GmbH",
+            "invoice_number": "RE-2026-118",
+            "currency": "EUR",
+            "total": "12.480,00",
+            "due_date": "2026-11-01",
+            "line_items": [
+              {
+                "description": "CNC-Spindel Wartung und Kalibrierung",
+                "amount": "8.320,00"
+              },
+              {
+                "description": "Ersatzteile Spindellager (Satz)",
+                "amount": "4.160,00"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

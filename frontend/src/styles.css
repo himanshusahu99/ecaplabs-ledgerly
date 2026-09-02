@@ -1,0 +1,345 @@
+:root {
+  --color-bg: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e5ea;
+  --color-text: #1b1f24;
+  --color-text-muted: #5f6b7a;
+  --color-primary: #2f5bea;
+  --color-primary-hover: #2449c4;
+  --color-danger: #c4352b;
+  --color-danger-surface: #fdecea;
+  --color-info-surface: #e8effd;
+  --color-success: #1d7a46;
+  --color-success-surface: #e4f4ea;
+  --color-warning: #8a5a00;
+  --color-warning-surface: #fdf3dc;
+  --color-muted-surface: #eef0f3;
+  --radius: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h3 {
+  font-size: 14px;
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.app-name {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.business-name {
+  font-size: 22px;
+}
+
+.header-account {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+select {
+  font: inherit;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.tabs {
+  display: flex;
+  gap: var(--space-1);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-4);
+}
+
+.tab {
+  font: inherit;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] {
+  border-bottom-color: var(--color-primary);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.summary-card {
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.summary-label {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.summary-value {
+  margin: var(--space-1) 0 0;
+  font-size: 24px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip,
+.button {
+  font: inherit;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.button {
+  border-radius: var(--radius);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.button-danger {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.data-table th,
+.data-table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.data-table th {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.data-table .numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.selectable-row {
+  cursor: pointer;
+}
+
+.selectable-row:hover,
+.selectable-row[aria-selected="true"] {
+  background: var(--color-info-surface);
+}
+
+.empty-row,
+.muted {
+  color: var(--color-text-muted);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.tone-neutral,
+.tone-muted {
+  background: var(--color-muted-surface);
+  color: var(--color-text-muted);
+}
+
+.tone-info {
+  background: var(--color-info-surface);
+  color: var(--color-primary);
+}
+
+.tone-success {
+  background: var(--color-success-surface);
+  color: var(--color-success);
+}
+
+.tone-warning {
+  background: var(--color-warning-surface);
+  color: var(--color-warning);
+}
+
+.tone-danger {
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+}
+
+.error-message,
+.extraction-error {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+}
+
+.invoices-layout.with-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.invoice-panel {
+  position: sticky;
+  top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.panel-header h2 {
+  font-size: 18px;
+}
+
+.field-list {
+  margin: var(--space-3) 0 0;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  padding: var(--space-1) 0;
+}
+
+.field-row dt {
+  color: var(--color-text-muted);
+}
+
+.field-row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.panel-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .invoices-layout.with-panel {
+    grid-template-columns: 1fr;
+  }
+}

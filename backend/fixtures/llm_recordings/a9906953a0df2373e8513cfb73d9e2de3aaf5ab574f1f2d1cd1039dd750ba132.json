@@ -1,0 +1,68 @@
+{
+  "document": "inv_northwind_21004.txt",
+  "model": "claude-opus-5-5",
+  "turns": [
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "text",
+          "text": "Looking up the vendor as printed on the invoice."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_02NcFind",
+          "name": "find_payee",
+          "input": {
+            "name": "NORTHWIND SUPPLIES"
+          }
+        }
+      ]
+    },
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "text",
+          "text": "No payee matched, so I'll create one."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_02NcCreate",
+          "name": "create_payee",
+          "input": {
+            "name": "NORTHWIND SUPPLIES",
+            "email": "AR@NORTHWINDSUPPLIES.TEST"
+          }
+        }
+      ]
+    },
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "tool_use",
+          "id": "toolu_02NcSubmit",
+          "name": "submit_extraction",
+          "input": {
+            "vendor_name": "NORTHWIND SUPPLIES",
+            "invoice_number": "INV-21004",
+            "currency": "USD",
+            "total": "$642.10",
+            "due_date": "2026-11-05",
+            "line_items": [
+              {
+                "description": "Pallet rack beams (12)",
+                "amount": "$480.00"
+              },
+              {
+                "description": "Wire decking (6)",
+                "amount": "$162.10"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

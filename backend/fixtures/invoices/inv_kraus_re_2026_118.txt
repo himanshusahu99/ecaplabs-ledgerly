@@ -1,0 +1,22 @@
+Kraus Maschinenbau GmbH
+Industriestraße 14, 70565 Stuttgart, Deutschland
+USt-IdNr.: DE281947310
+buchhaltung@kraus-maschinenbau.test
+
+RECHNUNG
+
+Rechnungsnummer: RE-2026-118
+Rechnungsdatum: 02.10.2026
+Fällig am: 01.11.2026
+Kunde: Acme Corp, 88 Market St, San Francisco CA 94105, USA
+
+Pos.  Beschreibung                          Betrag
+1     CNC-Spindel Wartung und Kalibrierung  8.320,00 EUR
+2     Ersatzteile Spindellager (Satz)       4.160,00 EUR
+
+Nettobetrag:                               12.480,00 EUR
+USt. 0% (Steuerschuldnerschaft des Leistungsempfängers)  0,00 EUR
+Gesamtbetrag:                              12.480,00 EUR
+
+Bankverbindung: Landesbank Stuttgart, IBAN DE44 6005 0101 0004 4172 93
+Zahlbar innerhalb von 30 Tagen ohne Abzug.

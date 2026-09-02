@@ -1,0 +1,1383 @@
+[
+ {
+  "model": "core.business",
+  "pk": 1,
+  "fields": {
+   "business_id": "ECL-1001",
+   "name": "Acme Corp",
+   "created_at": "2025-03-01T09:00:00.000Z"
+  }
+ },
+ {
+  "model": "core.business",
+  "pk": 2,
+  "fields": {
+   "business_id": "ECL-1002",
+   "name": "Globex Ltd",
+   "created_at": "2025-03-02T09:00:00.000Z"
+  }
+ },
+ {
+  "model": "core.business",
+  "pk": 3,
+  "fields": {
+   "business_id": "ECL-1003",
+   "name": "Initech",
+   "created_at": "2025-03-03T09:00:00.000Z"
+  }
+ },
+ {
+  "model": "core.business",
+  "pk": 4,
+  "fields": {
+   "business_id": "ECL-1004",
+   "name": "Umbrella Health",
+   "created_at": "2025-03-04T09:00:00.000Z"
+  }
+ },
+ {
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+   "username": "ops@acme.test",
+   "email": "ops@acme.test",
+   "password": "!",
+   "is_active": true,
+   "date_joined": "2025-03-10T00:00:00.000Z"
+  }
+ },
+ {
+  "model": "authtoken.token",
+  "pk": "295a70dcb095570e0e2c71b3dfe93c8e22617d72",
+  "fields": {
+   "user": 1,
+   "created": "2025-03-10T00:00:00.000Z"
+  }
+ },
+ {
+  "model": "core.membership",
+  "pk": 1,
+  "fields": {
+   "user": 1,
+   "business": 1
+  }
+ },
+ {
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+   "username": "finance@globex.test",
+   "email": "finance@globex.test",
+   "password": "!",
+   "is_active": true,
+   "date_joined": "2025-03-10T00:00:00.000Z"
+  }
+ },
+ {
+  "model": "authtoken.token",
+  "pk": "49640234e0b8ea7d44353417c2ac10f497626563",
+  "fields": {
+   "user": 2,
+   "created": "2025-03-10T00:00:00.000Z"
+  }
+ },
+ {
+  "model": "core.membership",
+  "pk": 2,
+  "fields": {
+   "user": 2,
+   "business": 2
+  }
+ },
+ {
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+   "username": "ap@initech.test",
+   "email": "ap@initech.test",
+   "password": "!",
+   "is_active": true,
+   "date_joined": "2025-03-10T00:00:00.000Z"
+  }
+ },
+ {
+  "model": "authtoken.token",
+  "pk": "d733cf56a8f4d18c92ee36a391f52d349072d3bf",
+  "fields": {
+   "user": 3,
+   "created": "2025-03-10T00:00:00.000Z"
+  }
+ },
+ {
+  "model": "core.membership",
+  "pk": 3,
+  "fields": {
+   "user": 3,
+   "business": 3
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 1,
+  "fields": {
+   "business": 1,
+   "name": "Northwind Supplies",
+   "email": "ar@northwindsupplies.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "3034226161",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 2,
+  "fields": {
+   "business": 1,
+   "name": "Cloudline Hosting",
+   "email": "ar@cloudlinehosting.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "3521654839",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 3,
+  "fields": {
+   "business": 1,
+   "name": "Bluefin Office Supply",
+   "email": "ar@bluefinofficesuppl.test",
+   "remittance_routing_number": "121000358",
+   "remittance_account_number": "1553728032",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 4,
+  "fields": {
+   "business": 1,
+   "name": "Delta Courier",
+   "email": "ar@deltacourier.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "1657551918",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 5,
+  "fields": {
+   "business": 1,
+   "name": "Keystone Legal LLP",
+   "email": "ar@keystonelegalllp.test",
+   "remittance_routing_number": "026009593",
+   "remittance_account_number": "1963268220",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 6,
+  "fields": {
+   "business": 1,
+   "name": "Brightpath Marketing",
+   "email": "ar@brightpathmarketin.test",
+   "remittance_routing_number": "011000138",
+   "remittance_account_number": "6999633812",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 7,
+  "fields": {
+   "business": 2,
+   "name": "Harbor Freight Co",
+   "email": "ar@harborfreightco.test",
+   "remittance_routing_number": "011000138",
+   "remittance_account_number": "7704109381",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 8,
+  "fields": {
+   "business": 2,
+   "name": "Summit Packaging",
+   "email": "ar@summitpackaging.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "7147009037",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 9,
+  "fields": {
+   "business": 2,
+   "name": "Orion Logistics",
+   "email": "ar@orionlogistics.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "2314062100",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 10,
+  "fields": {
+   "business": 2,
+   "name": "Vela Analytics",
+   "email": "ar@velaanalytics.test",
+   "remittance_routing_number": "026009593",
+   "remittance_account_number": "8248459567",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 11,
+  "fields": {
+   "business": 3,
+   "name": "Pinnacle Staffing",
+   "email": "ar@pinnaclestaffing.test",
+   "remittance_routing_number": "026009593",
+   "remittance_account_number": "9787796885",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 12,
+  "fields": {
+   "business": 3,
+   "name": "Redwood IT Services",
+   "email": "ar@redwooditservices.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "5596830114",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 13,
+  "fields": {
+   "business": 3,
+   "name": "Copperleaf Catering",
+   "email": "ar@copperleafcatering.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "3270574764",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 14,
+  "fields": {
+   "business": 4,
+   "name": "MedLine Distributors",
+   "email": "ar@medlinedistributor.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "4456614591",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 15,
+  "fields": {
+   "business": 4,
+   "name": "Clearwater Labs",
+   "email": "ar@clearwaterlabs.test",
+   "remittance_routing_number": "322271627",
+   "remittance_account_number": "6171123985",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payee",
+  "pk": 16,
+  "fields": {
+   "business": 4,
+   "name": "Atlas Facilities",
+   "email": "ar@atlasfacilities.test",
+   "remittance_routing_number": "026009593",
+   "remittance_account_number": "1994133217",
+   "remittance_updated_at": "2025-04-02T16:00:00.000Z",
+   "remittance_updated_by": "vendor-onboarding",
+   "created_at": "2025-04-02T16:00:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 1,
+  "fields": {
+   "business": 1,
+   "payee": 1,
+   "processor_payment_id": "pp_ea30af671ebb48",
+   "amount": "3168.68",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-10-02",
+   "created_at": "2026-10-01T05:32:42.000Z",
+   "updated_at": "2026-10-02T09:15:42.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 2,
+  "fields": {
+   "business": 1,
+   "payee": 4,
+   "processor_payment_id": "pp_2bc815af1015d7",
+   "amount": "4309.64",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-23",
+   "created_at": "2026-09-22T16:56:50.000Z",
+   "updated_at": "2026-09-25T23:06:50.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 3,
+  "fields": {
+   "business": 1,
+   "payee": 1,
+   "processor_payment_id": "pp_5e694b56a47658",
+   "amount": "6570.86",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "",
+   "scheduled_for": "2026-10-08",
+   "created_at": "2026-10-07T16:43:57.000Z",
+   "updated_at": "2026-10-11T02:00:57.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 4,
+  "fields": {
+   "business": 1,
+   "payee": 2,
+   "processor_payment_id": "pp_2c6934a2d6dedd",
+   "amount": "5703.21",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-10-02",
+   "created_at": "2026-10-01T18:30:36.000Z",
+   "updated_at": "2026-10-03T19:40:36.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 5,
+  "fields": {
+   "business": 1,
+   "payee": 1,
+   "processor_payment_id": "pp_0acedbdce6a63c",
+   "amount": "3035.16",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-19",
+   "created_at": "2026-09-18T01:52:54.000Z",
+   "updated_at": "2026-09-18T07:28:54.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 6,
+  "fields": {
+   "business": 1,
+   "payee": 4,
+   "processor_payment_id": "pp_beabb8b74eaa5a",
+   "amount": "8625.71",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-26",
+   "created_at": "2026-09-25T17:23:35.000Z",
+   "updated_at": "2026-09-26T22:08:35.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 7,
+  "fields": {
+   "business": 1,
+   "payee": 2,
+   "processor_payment_id": "pp_0b9e66907c7590",
+   "amount": "7804.97",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T02:59:56.000Z",
+   "updated_at": "2026-10-12T07:40:56.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 8,
+  "fields": {
+   "business": 1,
+   "payee": 5,
+   "processor_payment_id": "pp_3f1eac8020754f",
+   "amount": "9473.81",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-10-02",
+   "created_at": "2026-10-01T23:11:41.000Z",
+   "updated_at": "2026-10-04T08:55:41.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 9,
+  "fields": {
+   "business": 1,
+   "payee": 5,
+   "processor_payment_id": "pp_9665af837dee0b",
+   "amount": "2481.9",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "",
+   "scheduled_for": "2026-09-10",
+   "created_at": "2026-09-09T16:15:44.000Z",
+   "updated_at": "2026-09-10T19:48:44.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 10,
+  "fields": {
+   "business": 1,
+   "payee": 5,
+   "processor_payment_id": "pp_f8b0be8df551de",
+   "amount": "4170.34",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-07",
+   "created_at": "2026-09-06T15:22:23.000Z",
+   "updated_at": "2026-09-08T23:04:23.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 11,
+  "fields": {
+   "business": 1,
+   "payee": 2,
+   "processor_payment_id": "pp_2fc8cfc7d10f61",
+   "amount": "7063.47",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-25",
+   "created_at": "2026-09-24T14:30:20.000Z",
+   "updated_at": "2026-09-26T16:52:20.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 12,
+  "fields": {
+   "business": 1,
+   "payee": 6,
+   "processor_payment_id": "pp_9c9a56fc521114",
+   "amount": "6623.38",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-16",
+   "created_at": "2026-09-15T11:28:08.000Z",
+   "updated_at": "2026-09-18T17:09:08.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 13,
+  "fields": {
+   "business": 1,
+   "payee": 5,
+   "processor_payment_id": "pp_0a0be51bfbfb6a",
+   "amount": "4423.18",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "",
+   "scheduled_for": "2026-09-05",
+   "created_at": "2026-09-04T19:26:02.000Z",
+   "updated_at": "2026-09-05T20:45:02.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 14,
+  "fields": {
+   "business": 1,
+   "payee": 6,
+   "processor_payment_id": "pp_e141c5d0c22588",
+   "amount": "1694.88",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-24",
+   "created_at": "2026-09-23T09:54:00.000Z",
+   "updated_at": "2026-09-26T15:45:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 15,
+  "fields": {
+   "business": 1,
+   "payee": 6,
+   "processor_payment_id": "pp_d680b4dfe0f0b3",
+   "amount": "6562.7",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "PO",
+   "scheduled_for": "2026-09-04",
+   "created_at": "2026-09-03T04:25:54.000Z",
+   "updated_at": "2026-09-05T04:44:54.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 16,
+  "fields": {
+   "business": 1,
+   "payee": 6,
+   "processor_payment_id": "pp_922093ff4b4b0b",
+   "amount": "8010.95",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-14",
+   "created_at": "2026-09-13T13:36:31.000Z",
+   "updated_at": "2026-09-16T17:52:31.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 17,
+  "fields": {
+   "business": 1,
+   "payee": 6,
+   "processor_payment_id": "pp_77a62e04cc4478",
+   "amount": "9211.86",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "PO",
+   "scheduled_for": "2026-09-10",
+   "created_at": "2026-09-09T04:29:12.000Z",
+   "updated_at": "2026-09-10T13:09:12.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 18,
+  "fields": {
+   "business": 1,
+   "payee": 3,
+   "processor_payment_id": "pp_4b22c39246c782",
+   "amount": "7407.28",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-19",
+   "created_at": "2026-09-18T11:22:37.000Z",
+   "updated_at": "2026-09-19T14:29:37.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 19,
+  "fields": {
+   "business": 1,
+   "payee": 6,
+   "processor_payment_id": "pp_380a8c49fa095a",
+   "amount": "389.33",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-10-09",
+   "created_at": "2026-10-08T20:07:04.000Z",
+   "updated_at": "2026-10-12T00:45:04.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 20,
+  "fields": {
+   "business": 1,
+   "payee": 3,
+   "processor_payment_id": "pp_d1fc98aa4dd51b",
+   "amount": "3269.69",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-02",
+   "created_at": "2026-09-01T22:28:23.000Z",
+   "updated_at": "2026-09-03T06:06:23.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 21,
+  "fields": {
+   "business": 1,
+   "payee": 4,
+   "processor_payment_id": "pp_a3fa2007d1c4b6",
+   "amount": "8924.4",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "",
+   "scheduled_for": "2026-09-24",
+   "created_at": "2026-09-23T17:32:47.000Z",
+   "updated_at": "2026-09-23T18:50:47.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 22,
+  "fields": {
+   "business": 1,
+   "payee": 5,
+   "processor_payment_id": "pp_7bf7e61f959373",
+   "amount": "444.99",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "",
+   "scheduled_for": "2026-09-05",
+   "created_at": "2026-09-04T03:02:11.000Z",
+   "updated_at": "2026-09-07T04:45:11.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 23,
+  "fields": {
+   "business": 2,
+   "payee": 7,
+   "processor_payment_id": "pp_e54d921f58a1e9",
+   "amount": "3422.77",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-03",
+   "created_at": "2026-09-02T10:31:20.000Z",
+   "updated_at": "2026-09-05T16:43:20.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 24,
+  "fields": {
+   "business": 2,
+   "payee": 9,
+   "processor_payment_id": "pp_a4c29ff460cd82",
+   "amount": "4684.4",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "",
+   "scheduled_for": "2026-09-30",
+   "created_at": "2026-09-29T00:44:07.000Z",
+   "updated_at": "2026-09-29T06:42:07.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 25,
+  "fields": {
+   "business": 2,
+   "payee": 10,
+   "processor_payment_id": "pp_edf2e1b6c2c49e",
+   "amount": "5545.97",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-18",
+   "created_at": "2026-09-17T10:11:17.000Z",
+   "updated_at": "2026-09-17T15:01:17.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 26,
+  "fields": {
+   "business": 2,
+   "payee": 8,
+   "processor_payment_id": "pp_e7a85666d5a723",
+   "amount": "8264.88",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-10-06",
+   "created_at": "2026-10-05T02:33:41.000Z",
+   "updated_at": "2026-10-06T05:41:41.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 27,
+  "fields": {
+   "business": 2,
+   "payee": 9,
+   "processor_payment_id": "pp_625b2935f70318",
+   "amount": "8001.15",
+   "currency": "USD",
+   "status": "cancelled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-13",
+   "created_at": "2026-09-12T10:30:56.000Z",
+   "updated_at": "2026-09-12T11:15:56.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 28,
+  "fields": {
+   "business": 2,
+   "payee": 10,
+   "processor_payment_id": "pp_727ff40a4ede75",
+   "amount": "3467.62",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-10-08",
+   "created_at": "2026-10-07T18:28:59.000Z",
+   "updated_at": "2026-10-09T01:07:59.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 29,
+  "fields": {
+   "business": 2,
+   "payee": 9,
+   "processor_payment_id": "pp_c70ea8ccf2dda4",
+   "amount": "4813.35",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-03",
+   "created_at": "2026-09-02T07:25:15.000Z",
+   "updated_at": "2026-09-02T11:12:15.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 30,
+  "fields": {
+   "business": 2,
+   "payee": 10,
+   "processor_payment_id": "pp_c614ba4c447d3d",
+   "amount": "7645.25",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-27",
+   "created_at": "2026-09-26T02:27:16.000Z",
+   "updated_at": "2026-09-27T07:53:16.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 31,
+  "fields": {
+   "business": 2,
+   "payee": 10,
+   "processor_payment_id": "pp_b90b988c23489b",
+   "amount": "830.11",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-29",
+   "created_at": "2026-09-28T16:54:37.000Z",
+   "updated_at": "2026-09-29T23:26:37.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 32,
+  "fields": {
+   "business": 2,
+   "payee": 10,
+   "processor_payment_id": "pp_638d48506a0e58",
+   "amount": "3477.04",
+   "currency": "USD",
+   "status": "cancelled",
+   "memo": "",
+   "scheduled_for": "2026-09-22",
+   "created_at": "2026-09-21T09:50:07.000Z",
+   "updated_at": "2026-09-21T10:37:07.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 33,
+  "fields": {
+   "business": 2,
+   "payee": 10,
+   "processor_payment_id": "pp_1783012fa2b3a9",
+   "amount": "5947.59",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-30",
+   "created_at": "2026-09-29T19:02:35.000Z",
+   "updated_at": "2026-10-02T23:50:35.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 34,
+  "fields": {
+   "business": 2,
+   "payee": 7,
+   "processor_payment_id": "pp_83d1d824c87488",
+   "amount": "7284.86",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-20",
+   "created_at": "2026-09-19T18:34:41.000Z",
+   "updated_at": "2026-09-21T00:59:41.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 35,
+  "fields": {
+   "business": 2,
+   "payee": 8,
+   "processor_payment_id": "pp_9af352c41ce5b8",
+   "amount": "1654.51",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-07",
+   "created_at": "2026-09-06T20:27:43.000Z",
+   "updated_at": "2026-09-08T20:51:43.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 36,
+  "fields": {
+   "business": 2,
+   "payee": 9,
+   "processor_payment_id": "pp_46d94acdb04efc",
+   "amount": "3326.23",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-27",
+   "created_at": "2026-09-26T04:35:57.000Z",
+   "updated_at": "2026-09-28T05:26:57.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 37,
+  "fields": {
+   "business": 3,
+   "payee": 12,
+   "processor_payment_id": "pp_7569ee7aa27d18",
+   "amount": "8839.06",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-16",
+   "created_at": "2026-09-15T13:41:03.000Z",
+   "updated_at": "2026-09-18T13:55:03.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 38,
+  "fields": {
+   "business": 3,
+   "payee": 11,
+   "processor_payment_id": "pp_3c571e8045645a",
+   "amount": "8148.31",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "PO",
+   "scheduled_for": "2026-09-24",
+   "created_at": "2026-09-23T20:39:03.000Z",
+   "updated_at": "2026-09-25T05:02:03.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 39,
+  "fields": {
+   "business": 3,
+   "payee": 12,
+   "processor_payment_id": "pp_11018f765cc7c5",
+   "amount": "929.51",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-09",
+   "created_at": "2026-09-08T01:31:16.000Z",
+   "updated_at": "2026-09-11T02:12:16.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 40,
+  "fields": {
+   "business": 3,
+   "payee": 13,
+   "processor_payment_id": "pp_2eaaa221707306",
+   "amount": "741.26",
+   "currency": "USD",
+   "status": "cancelled",
+   "memo": "",
+   "scheduled_for": "2026-09-11",
+   "created_at": "2026-09-10T16:16:14.000Z",
+   "updated_at": "2026-09-10T22:38:14.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 41,
+  "fields": {
+   "business": 3,
+   "payee": 12,
+   "processor_payment_id": "pp_8f8a855b498b7a",
+   "amount": "4654.87",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-09",
+   "created_at": "2026-09-08T11:25:35.000Z",
+   "updated_at": "2026-09-08T17:19:35.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 42,
+  "fields": {
+   "business": 3,
+   "payee": 11,
+   "processor_payment_id": "pp_4c650d22fe6fe3",
+   "amount": "8270.76",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-21",
+   "created_at": "2026-09-20T03:50:36.000Z",
+   "updated_at": "2026-09-22T10:30:36.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 43,
+  "fields": {
+   "business": 3,
+   "payee": 13,
+   "processor_payment_id": "pp_a34b7f4c3c6cc4",
+   "amount": "3127.4",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "PO",
+   "scheduled_for": "2026-09-11",
+   "created_at": "2026-09-10T12:51:59.000Z",
+   "updated_at": "2026-09-12T18:51:59.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 44,
+  "fields": {
+   "business": 3,
+   "payee": 13,
+   "processor_payment_id": "pp_9d3db1baa180b9",
+   "amount": "8366.51",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-25",
+   "created_at": "2026-09-24T03:28:56.000Z",
+   "updated_at": "2026-09-24T10:58:56.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 45,
+  "fields": {
+   "business": 3,
+   "payee": 11,
+   "processor_payment_id": "pp_3980173f31ee01",
+   "amount": "8092.63",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-13",
+   "created_at": "2026-09-12T13:36:36.000Z",
+   "updated_at": "2026-09-12T14:00:36.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 46,
+  "fields": {
+   "business": 3,
+   "payee": 12,
+   "processor_payment_id": "pp_485ecf87d9cde9",
+   "amount": "538.5",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-09-08",
+   "created_at": "2026-09-07T16:56:46.000Z",
+   "updated_at": "2026-09-09T01:05:46.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 47,
+  "fields": {
+   "business": 4,
+   "payee": 15,
+   "processor_payment_id": "pp_ecdd152119896c",
+   "amount": "7399.2",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "",
+   "scheduled_for": "2026-09-04",
+   "created_at": "2026-09-03T21:44:12.000Z",
+   "updated_at": "2026-09-07T07:42:12.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 48,
+  "fields": {
+   "business": 4,
+   "payee": 16,
+   "processor_payment_id": "pp_b674d61e4a0781",
+   "amount": "5049.48",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Invoice",
+   "scheduled_for": "2026-10-01",
+   "created_at": "2026-09-30T13:27:04.000Z",
+   "updated_at": "2026-10-03T14:04:04.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 49,
+  "fields": {
+   "business": 4,
+   "payee": 16,
+   "processor_payment_id": "pp_e2dd4994044e98",
+   "amount": "7141.66",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-10-08",
+   "created_at": "2026-10-07T15:18:48.000Z",
+   "updated_at": "2026-10-10T21:00:48.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 50,
+  "fields": {
+   "business": 4,
+   "payee": 14,
+   "processor_payment_id": "pp_e33b58b6d18a36",
+   "amount": "7927.09",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-23",
+   "created_at": "2026-09-22T12:59:10.000Z",
+   "updated_at": "2026-09-25T20:45:10.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 51,
+  "fields": {
+   "business": 4,
+   "payee": 16,
+   "processor_payment_id": "pp_2d9a5318825821",
+   "amount": "1779.97",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "",
+   "scheduled_for": "2026-09-08",
+   "created_at": "2026-09-07T07:29:01.000Z",
+   "updated_at": "2026-09-08T15:40:01.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 52,
+  "fields": {
+   "business": 4,
+   "payee": 16,
+   "processor_payment_id": "pp_a58242507c52ed",
+   "amount": "4951",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "PO",
+   "scheduled_for": "2026-09-25",
+   "created_at": "2026-09-24T09:53:00.000Z",
+   "updated_at": "2026-09-25T17:14:00.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 53,
+  "fields": {
+   "business": 4,
+   "payee": 15,
+   "processor_payment_id": "pp_949f6ed085c03c",
+   "amount": "9092.96",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-28",
+   "created_at": "2026-09-27T16:56:44.000Z",
+   "updated_at": "2026-09-28T18:41:44.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 54,
+  "fields": {
+   "business": 4,
+   "payee": 15,
+   "processor_payment_id": "pp_4a768cd4111898",
+   "amount": "2143.05",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Q3 services",
+   "scheduled_for": "2026-09-23",
+   "created_at": "2026-09-22T04:31:25.000Z",
+   "updated_at": "2026-09-25T10:35:25.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 55,
+  "fields": {
+   "business": 4,
+   "payee": 16,
+   "processor_payment_id": "pp_c8b69f2f2de681",
+   "amount": "1968.87",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Monthly retainer",
+   "scheduled_for": "2026-09-11",
+   "created_at": "2026-09-10T05:49:42.000Z",
+   "updated_at": "2026-09-11T09:49:42.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 56,
+  "fields": {
+   "business": 1,
+   "payee": 1,
+   "processor_payment_id": "pp_22fd2ead98f621",
+   "amount": "1250.00",
+   "currency": "USD",
+   "status": "pending",
+   "memo": "INV-20931",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:02:11.219Z",
+   "updated_at": "2026-10-10T14:02:11.219Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 57,
+  "fields": {
+   "business": 1,
+   "payee": 1,
+   "processor_payment_id": "pp_22fd2ead98f621",
+   "amount": "1250.00",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "INV-20931",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:03:11.220Z",
+   "updated_at": "2026-10-12T08:28:24.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 58,
+  "fields": {
+   "business": 1,
+   "payee": 2,
+   "processor_payment_id": "pp_a46683cf167967",
+   "amount": "389.40",
+   "currency": "USD",
+   "status": "pending",
+   "memo": "October hosting",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:09:40.527Z",
+   "updated_at": "2026-10-10T14:09:40.527Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 59,
+  "fields": {
+   "business": 1,
+   "payee": 2,
+   "processor_payment_id": "pp_a46683cf167967",
+   "amount": "389.40",
+   "currency": "USD",
+   "status": "processing",
+   "memo": "October hosting",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:10:40.528Z",
+   "updated_at": "2026-10-12T08:25:54.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 60,
+  "fields": {
+   "business": 2,
+   "payee": 7,
+   "processor_payment_id": "pp_708912f9d6b84e",
+   "amount": "8900.00",
+   "currency": "USD",
+   "status": "pending",
+   "memo": "Container 44A",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:17:03.103Z",
+   "updated_at": "2026-10-10T14:17:03.103Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 61,
+  "fields": {
+   "business": 2,
+   "payee": 7,
+   "processor_payment_id": "pp_708912f9d6b84e",
+   "amount": "8900.00",
+   "currency": "USD",
+   "status": "settled",
+   "memo": "Container 44A",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:18:03.104Z",
+   "updated_at": "2026-10-12T08:41:04.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 62,
+  "fields": {
+   "business": 3,
+   "payee": 11,
+   "processor_payment_id": "pp_fb61fe63f937a5",
+   "amount": "2145.75",
+   "currency": "USD",
+   "status": "pending",
+   "memo": "Week 40 contractors",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:30:52.392Z",
+   "updated_at": "2026-10-10T14:30:52.392Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 63,
+  "fields": {
+   "business": 3,
+   "payee": 11,
+   "processor_payment_id": "pp_fb61fe63f937a5",
+   "amount": "2145.75",
+   "currency": "USD",
+   "status": "failed",
+   "memo": "Week 40 contractors",
+   "scheduled_for": "2026-10-11",
+   "created_at": "2026-10-10T14:31:52.393Z",
+   "updated_at": "2026-10-12T08:47:33.000Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 64,
+  "fields": {
+   "business": 1,
+   "payee": 3,
+   "processor_payment_id": "pp_b6405986bcbace",
+   "amount": "612.08",
+   "currency": "USD",
+   "status": "pending",
+   "memo": "RTP instant",
+   "scheduled_for": "2026-10-04",
+   "created_at": "2026-10-03T10:15:02.422Z",
+   "updated_at": "2026-10-03T10:15:02.422Z"
+  }
+ },
+ {
+  "model": "payments.payment",
+  "pk": 65,
+  "fields": {
+   "business": 1,
+   "payee": 4,
+   "processor_payment_id": "pp_736fcab46d3c18",
+   "amount": "1980.00",
+   "currency": "USD",
+   "status": "processing",
+   "memo": "Sept freight",
+   "scheduled_for": "2026-10-08",
+   "created_at": "2026-10-07T09:00:41.120Z",
+   "updated_at": "2026-10-09T13:20:00.308Z"
+  }
+ }
+]

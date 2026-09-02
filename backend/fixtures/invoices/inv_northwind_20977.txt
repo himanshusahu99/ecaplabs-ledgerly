@@ -1,0 +1,21 @@
+NORTHWIND SUPPLIES
+Northwind Supplies LLC
+410 Harbor Way, Oakland CA 94607
+ar@northwindsupplies.test
+
+INVOICE
+
+Invoice No: INV-20977
+Invoice Date: 10/01/2026
+Due Date: 10/31/2026
+Bill To: Acme Corp, 88 Market St, San Francisco CA 94105
+
+Description                         Qty     Unit Price      Amount
+Industrial shelving units           16        $125.00     $2,000.00
+Installation labour                  1        $310.00       $310.00
+
+                                            Subtotal:     $2,310.00
+                                            Tax (0%):         $0.00
+                                            TOTAL DUE:    $2,310.00 USD
+
+Remit by ACH to the account on file. Thank you for your business.

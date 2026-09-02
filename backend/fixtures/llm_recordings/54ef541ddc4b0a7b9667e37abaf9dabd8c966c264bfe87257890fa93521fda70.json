@@ -1,0 +1,54 @@
+{
+  "document": "inv_northwind_20977.txt",
+  "model": "claude-opus-5-5",
+  "turns": [
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "text",
+          "text": "I'll check whether Northwind Supplies is already a payee."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_01NwFind",
+          "name": "find_payee",
+          "input": {
+            "name": "Northwind Supplies"
+          }
+        }
+      ]
+    },
+    {
+      "stop_reason": "tool_use",
+      "content": [
+        {
+          "type": "text",
+          "text": "Northwind Supplies matches an existing payee. Submitting the extraction."
+        },
+        {
+          "type": "tool_use",
+          "id": "toolu_01NwSubmit",
+          "name": "submit_extraction",
+          "input": {
+            "vendor_name": "Northwind Supplies",
+            "invoice_number": "INV-20977",
+            "currency": "USD",
+            "total": "$2,310.00",
+            "due_date": "2026-10-31",
+            "line_items": [
+              {
+                "description": "Industrial shelving units",
+                "amount": "$2,000.00"
+              },
+              {
+                "description": "Installation labour",
+                "amount": "$310.00"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

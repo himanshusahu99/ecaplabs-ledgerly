@@ -1,0 +1,13 @@
+NORTHWIND SUPPLIES
+410 HARBOR WAY  OAKLAND CA 94607
+AR@NORTHWINDSUPPLIES.TEST
+
+INVOICE # INV-21004
+DATE 10/06/2026        TERMS NET 30        DUE 11/05/2026
+SOLD TO: ACME CORP
+
+ITEM                                   AMOUNT
+PALLET RACK BEAMS (12)                 $480.00
+WIRE DECKING (6)                       $162.10
+
+TOTAL                                  $642.10
