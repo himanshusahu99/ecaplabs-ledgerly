@@ -10,7 +10,7 @@ from payments.constants import STATUS_BY_EVENT_TYPE
 from payments.dtos import PaystreamEventDTO
 from payments.repositories.payee_repository import PayeeRepository
 from payments.repositories.payment_repository import PaymentRepository
-from payments.tasks import send_payment_notice_task
+from payments.services.notification_service import NotificationService
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +24,7 @@ class PaystreamWebhookProcessor(WebhookProcessorInterface):
         self.business_repository = BusinessRepository()
         self.payee_repository = PayeeRepository()
         self.payment_repository = PaymentRepository()
+        self.notification_service = NotificationService()
 
     def validate_payload(self, *, payload):
         missing = [key for key in REQUIRED_KEYS if key not in payload]
@@ -62,7 +63,7 @@ class PaystreamWebhookProcessor(WebhookProcessorInterface):
             payment.pk,
             payment.processor_payment_id,
         )
-        send_payment_notice_task.delay(payment_id=payment.pk)
+        self.notification_service.send_payment_notice(payment=payment)
 
     def _on_payment_status_changed(self, *, event):
         """Moves a payment to the status Paystream reports."""
