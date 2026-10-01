@@ -54,6 +54,29 @@ class InvoiceExtractionAgentTests(TestCase):
         self.assertEqual(run.payee.name, "New Co")
         self.assertEqual(Payee.objects.filter(business=self.business).count(), 1)
 
+    def test_applies_remittance_update_from_invoice(self):
+        payee = PaymentFactory.payee(business=self.business, name="Vendor")
+        client = ScriptedLLMClient(
+            turns=[
+                TurnFactory.tool_call(
+                    name="update_payee_remittance",
+                    tool_input={
+                        "payee_id": payee.pk,
+                        "routing_number": "021000089",
+                        "account_number": "7730019284",
+                        "reason": "new bank",
+                    },
+                ),
+                TurnFactory.submission(),
+            ]
+        )
+        InvoiceExtractionAgent(business=self.business, llm_client=client).run(
+            document_text="INVOICE"
+        )
+        payee.refresh_from_db()
+        self.assertEqual(payee.remittance_account_number, "7730019284")
+        self.assertEqual(payee.remittance_updated_by, "invoice-agent")
+
     def test_stopping_without_submission_is_an_error(self):
         client = ScriptedLLMClient(
             turns=[

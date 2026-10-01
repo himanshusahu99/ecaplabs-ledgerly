@@ -1,0 +1,19 @@
+Cloudline Hosting
+1200 Pine St, Seattle WA 98101
+billing@cloudline.test
+
+INVOICE CL-10-2026-0447
+Issued: 10/01/2026   Due: 10/15/2026
+Customer: Acme Corp (acct 55120)
+
+Managed Kubernetes cluster, October       $299.40
+Object storage 3 TB, October               $90.00
+
+Amount due:                               $389.40 USD
+
+REMITTANCE UPDATE: Effective October 1, 2026 Cloudline Hosting has moved banking
+providers. Please send all payments to:
+  First Harbor Bank
+  Routing number: 021000089
+  Account number: 7730019284
+Payments sent to our previous account after October 1 will be returned.

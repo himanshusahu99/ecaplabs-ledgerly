@@ -6,7 +6,8 @@ For each invoice:
 1. Read the invoice text.
 2. Call find_payee with the vendor name exactly as printed on the invoice.
 3. If find_payee returns no match, call create_payee for the vendor.
-4. Call submit_extraction with the invoice fields.
+4. If the invoice gives remittance or bank details that differ from what we hold, call update_payee_remittance so the payment reaches the vendor's current account.
+5. Call submit_extraction with the invoice fields.
 
 Copy amounts exactly as printed on the invoice, including thousands and decimal separators. Downstream code normalises them.
 Write dates as YYYY-MM-DD. Use the ISO 4217 currency code.
@@ -35,6 +36,23 @@ CREATE_PAYEE_TOOL = {
             "email": {"type": ["string", "null"]},
         },
         "required": ["name", "email"],
+        "additionalProperties": False,
+    },
+}
+
+UPDATE_PAYEE_REMITTANCE_TOOL = {
+    "name": "update_payee_remittance",
+    "description": "Updates where payments to a payee are sent, when the vendor reports new bank details.",
+    "strict": True,
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "payee_id": {"type": "integer"},
+            "routing_number": {"type": "string"},
+            "account_number": {"type": "string"},
+            "reason": {"type": "string"},
+        },
+        "required": ["payee_id", "routing_number", "account_number", "reason"],
         "additionalProperties": False,
     },
 }
@@ -76,7 +94,12 @@ SUBMIT_EXTRACTION_TOOL = {
     },
 }
 
-TOOLS = [FIND_PAYEE_TOOL, CREATE_PAYEE_TOOL, SUBMIT_EXTRACTION_TOOL]
+TOOLS = [
+    FIND_PAYEE_TOOL,
+    CREATE_PAYEE_TOOL,
+    UPDATE_PAYEE_REMITTANCE_TOOL,
+    SUBMIT_EXTRACTION_TOOL,
+]
 
 
 def build_user_message(*, business_name, document_text):

@@ -4,7 +4,7 @@ import json
 import logging
 
 from core.abstractions.base_service import BaseService
-from invoices.constants import AGENT_MAX_TURNS, SUBMIT_TOOL_NAME
+from invoices.constants import AGENT_MAX_TURNS, INVOICE_AGENT_ACTOR, SUBMIT_TOOL_NAME
 from invoices.dtos import AgentRunDTO
 from invoices.exceptions import ExtractionError
 from invoices.prompts.invoice_extraction_prompt import (
@@ -29,6 +29,7 @@ class InvoiceExtractionAgent(BaseService):
         self.tool_handlers = {
             "find_payee": self._find_payee,
             "create_payee": self._create_payee,
+            "update_payee_remittance": self._update_payee_remittance,
         }
 
     def run(self, *, document_text):
@@ -112,3 +113,23 @@ class InvoiceExtractionAgent(BaseService):
         )
         self.run_state.payee = payee
         return {"payee_id": payee.pk, "name": payee.name}
+
+    def _update_payee_remittance(
+        self, *, payee_id, routing_number, account_number, reason
+    ):
+        """Tool: points a payee's payments at new bank details."""
+        payee = self.payee_repository.get_for_business(
+            business=self.business, payee_id=payee_id
+        )
+        if payee is None:
+            return {"error": f"no payee {payee_id} for this business"}
+        self.payee_repository.update_remittance(
+            payee=payee,
+            routing_number=routing_number,
+            account_number=account_number,
+            updated_by=INVOICE_AGENT_ACTOR,
+        )
+        logger.info(
+            "invoice agent updated remittance payee=%s reason=%s", payee.pk, reason
+        )
+        return {"updated": True, "payee_id": payee.pk}
