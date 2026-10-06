@@ -27,5 +27,6 @@ class InvoiceSerializer(serializers.ModelSerializer):
             "payee_name",
             "line_items",
             "extraction_error",
+            "document_text",
             "created_at",
         ]

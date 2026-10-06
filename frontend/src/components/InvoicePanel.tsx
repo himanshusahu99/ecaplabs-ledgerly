@@ -96,6 +96,11 @@ export function InvoicePanel({ invoice, onDecide, onClose }: InvoicePanelProps) 
         </div>
       )}
 
+      <details className="source-document">
+        <summary>Original invoice text</summary>
+        <pre>{invoice.document_text}</pre>
+      </details>
+
       {decisionError && <ErrorMessage message={decisionError} />}
 
       <div className="panel-actions">

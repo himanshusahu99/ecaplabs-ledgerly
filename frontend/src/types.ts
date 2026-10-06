@@ -57,5 +57,6 @@ export interface Invoice {
   payee_name: string | null;
   line_items: InvoiceLineItem[];
   extraction_error: string;
+  document_text: string;
   created_at: string;
 }
