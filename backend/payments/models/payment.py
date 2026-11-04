@@ -14,7 +14,7 @@ class Payment(models.Model):
         Business, on_delete=models.CASCADE, related_name="payments"
     )
     payee = models.ForeignKey(Payee, on_delete=models.PROTECT, related_name="payments")
-    processor_payment_id = models.CharField(max_length=64, db_index=True)
+    processor_payment_id = models.CharField(max_length=64, unique=True)
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     currency = models.CharField(max_length=3, default=DEFAULT_CURRENCY)
     status = models.CharField(
