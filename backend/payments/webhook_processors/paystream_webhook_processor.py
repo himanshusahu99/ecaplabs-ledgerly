@@ -5,12 +5,13 @@ from decimal import Decimal
 
 from core.abstractions.webhook_processor_interface import WebhookProcessorInterface
 from core.repositories.business_repository import BusinessRepository
+from django.db import IntegrityError
 from payments.choices import PaystreamEventType
 from payments.constants import STATUS_BY_EVENT_TYPE
 from payments.dtos import PaystreamEventDTO
 from payments.repositories.payee_repository import PayeeRepository
 from payments.repositories.payment_repository import PaymentRepository
-from payments.services.notification_service import NotificationService
+from payments.tasks import send_payment_notice_task
 
 logger = logging.getLogger(__name__)
 
@@ -24,7 +25,6 @@ class PaystreamWebhookProcessor(WebhookProcessorInterface):
         self.business_repository = BusinessRepository()
         self.payee_repository = PayeeRepository()
         self.payment_repository = PaymentRepository()
-        self.notification_service = NotificationService()
 
     def validate_payload(self, *, payload):
         missing = [key for key in REQUIRED_KEYS if key not in payload]
@@ -43,27 +43,51 @@ class PaystreamWebhookProcessor(WebhookProcessorInterface):
     def _on_payment_created(self, *, event):
         """Records a payment the business scheduled in Paystream."""
         data = event.data
+
+        # First line of defence: skip before hitting the DB if we already have
+        # a record for this processor_payment_id (Paystream retry with same event_id).
+        if self.payment_repository.get_by_processor_payment_id(
+            processor_payment_id=data["id"]
+        ):
+            logger.info(
+                "duplicate webhook event_id=%s processor_payment_id=%s — skipping",
+                event.event_id,
+                data["id"],
+            )
+            return
+
         business = self.business_repository.get_by_business_id(
             business_id=data["business_id"]
         )
         payee = self.payee_repository.get_for_business(
             business=business, payee_id=data["payee_id"]
         )
-        payment = self.payment_repository.create(
-            business=business,
-            payee=payee,
-            processor_payment_id=data["id"],
-            amount=Decimal(data["amount"]),
-            currency=data["currency"],
-            memo=data.get("memo", ""),
-            scheduled_for=data.get("scheduled_for"),
-        )
+        try:
+            payment = self.payment_repository.create(
+                business=business,
+                payee=payee,
+                processor_payment_id=data["id"],
+                amount=Decimal(data["amount"]),
+                currency=data["currency"],
+                memo=data.get("memo", ""),
+                scheduled_for=data.get("scheduled_for"),
+            )
+        except IntegrityError:
+            # Second line of defence: the unique constraint on processor_payment_id
+            # caught a concurrent duplicate that slipped past the check above.
+            logger.warning(
+                "integrity error on duplicate processor_payment_id=%s — skipping",
+                data["id"],
+            )
+            return
         logger.info(
             "payment created pk=%s processor_payment_id=%s",
             payment.pk,
             payment.processor_payment_id,
         )
-        self.notification_service.send_payment_notice(payment=payment)
+        # Dispatch notification off the request path so notify-svc latency
+        # never causes our webhook response to exceed Paystream's 5-second timeout.
+        send_payment_notice_task.delay(payment.pk)
 
     def _on_payment_status_changed(self, *, event):
         """Moves a payment to the status Paystream reports."""
